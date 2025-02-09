@@ -6,7 +6,7 @@
 /*   By: pnaessen <pnaessen@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 11:25:22 by pnaessen          #+#    #+#             */
-/*   Updated: 2025/02/09 12:25:22 by pnaessen         ###   ########lyon.fr   */
+/*   Updated: 2025/02/09 16:31:10 by pnaessen         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,17 @@
 #include <errno.h>
 #include <stdlib.h>
 
+size_t ft_strlen(const char *s);
+char *ft_strcpy(char *dest, const char *src);
+int ft_strcmp(const char *s1, const char *s2);
+ssize_t ft_write(int fd, const void *buf, size_t count);
+ssize_t ft_read(int fd, void *buf, size_t count);
+char *ft_strdup(const char *s);
+
 int main()
 {
     char *test_str = "Hello, World!";
-    printf("ft_strlen: %d\n", ft_strlen(test_str));
+    printf("ft_strlen: %ld\n", ft_strlen(test_str));
 
     char dest[50];
     printf("ft_strcpy: %s\n", ft_strcpy(dest, test_str));
@@ -54,3 +61,5 @@ int main()
     
     return (0);
 }
+
+// pour compil gcc -o test main.c -L. -lasm
